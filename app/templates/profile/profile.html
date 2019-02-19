@@ -2,12 +2,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
 <header class="w3-container w3-padding-32">
     <div class="w3-top">
         <div class="w3-bar w3-white w3-card" id="myNavbar">
-          <a href="/" class="w3-bar-item w3-button w3-wide">DeeBlog</a>
+          <a href="/" class="w3-bar-item w3-button w3-wide">Bloggs.</a>
           <!-- Right-sided navbar links -->
           <div class="w3-right w3-hide-small">
                 {% if current_user.is_authenticated %}
@@ -18,10 +19,11 @@
             </div>
             </div>
             </div>
+<div class="jumbotron">
 
-    <h4 class="w3-center" style="margin-top:35px;">Welcome to the blog of <span class="w3-tag">{{current_user.username| capitalize}}!</span></h4>
+    <h4 class="w3-center" style="margin-top:35px;">Welcome to <span class="w3-tag">{{current_user.username| capitalize}}'s </span> Blog</h4>
   </header>
-  <div class="w3-row">
+  <div align="center" class="jumbotron" style="height:100%;">
       <div class="w3-col l8 s12">
           <div class="w3-card-4 w3-margin w3-white">
               <div class="w3-container">
@@ -30,11 +32,11 @@
           {% for row in posts | batch(2) %}
             {% for post in row %}
             <h3><b>{{post.title | upper}}</b></h3>
-            <div class="w3-container">
+            <div class="container">
                 {% if current_user.is_authenticated %}
-                <p>Poster: <a href="{{url_for('main.profile', uname = post.user.username)}}">{{post.user.username | upper}}</a></p>
+                <p>Posted by: <a href="{{url_for('main.profile', uname = post.user.username)}}">{{post.user.username | upper}}</a></p>
                 {%else%}
-                <p>Poster: <a href="{{url_for('main.writer_profile', uname = post.user.username)}}">{{post.user.username | upper}}</a></p>
+                <p>Posted by: <a href="{{url_for('main.writer_profile', uname = post.user.username)}}">{{post.user.username | upper}}</a></p>
                 {%endif%}
                 <p><strong>Blog-Post: </strong><br><br> {{post.body[0:100] + "......"}}
         <a href="{{url_for('main.read_post',post_id = post.id)}}" class="w3-button w3-padding-large w3-white w3-border">Read more</a></p>
@@ -88,5 +90,5 @@
               </div>
 
 
-
+</div>
 {% endblock %}

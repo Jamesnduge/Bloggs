@@ -28,13 +28,14 @@
       </div>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../static/css/style.css">
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+<header class="well well-lg" id="home">
         <div class=" w3-text-white" style="padding:48px; margin-top:35px;">
-                <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-                        <h1 class="w3-margin w3-xlarge">{{quotes.quote}}</h1>
+                <div class="jumbotron">
+                        <h1 style="color:black;">{{quotes.quote}}</h1>
                 </div>
            <p><a href="{{url_for('main.blog')}}" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-on" style="margin-top:50px;">View Blogs</a> </p>
           {% if current_user.is_authenticated %}

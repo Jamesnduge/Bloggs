@@ -2,17 +2,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
 <header class="w3-container w3-padding-32">
     <div class="w3-top">
         <div class="w3-bar w3-white w3-card" id="myNavbar">
-          <a href="/" class="w3-bar-item w3-button w3-wide">DeeBlog</a>
+          <a href="/" class="w3-bar-item w3-button w3-wide">Bloggs.</a>
           <div class="w3-right w3-hide-small">
-              <h4 class="w3-center" style="margin-top:35px;">Welcome to the blog of <span class="w3-tag">{{user.username| capitalize}}'s profile!</span></h4>
-              <div class="w3-row">
-                  <div class="w3-col l8 s12">
-                      <div class="w3-card-4 w3-margin w3-white">
+              <h4 class="w3-center" style="margin-top:35px;">Welcome to <span class="w3-tag">{{user.username| capitalize}}'s profile</span></h4>
+              <div class="row">
+                  <div class="col l8 s12">
+                      <div class="card-4">
                           <div class="w3-container">
                               {% if user == user.username %}
                               {% if posts %}

@@ -176,7 +176,7 @@ def comment(post_id):
         new_comment.save_comment()
 
         return redirect(url_for("main.read_post",post_id = post_id))
-    return render_template("comment.html", form = form, post = post)
+    return render_template("comments.html", form = form, post = post)
 
 @main.route('/<int:post_id>/comments')
 def show_comments(post_id):
